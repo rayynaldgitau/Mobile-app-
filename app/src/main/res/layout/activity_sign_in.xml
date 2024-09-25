@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo3"
+        android:contentDescription="Logo"
+        android:layout_gravity="center"/>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To Jobify"
+        android:fontFamily="sans-serif"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#4B0082"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"/>
+
+    <!-- Email Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableStart="@drawable/gmail"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </LinearLayout>
+
+    <!-- Password Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableEnd="@drawable/ic_eye"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            tools:ignore="VisualLintTextFieldSize" />
+
+    </LinearLayout>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Login"
+        android:textSize="18sp"
+        android:backgroundTint="#6A5ACD"
+        android:elevation="5dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        tools:ignore="VisualLintButtonSize" />
+
+    <!-- Forgot Password Text -->
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="I forgot my password"
+        android:textColor="#6A5ACD"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:textSize="14sp"/>
+
+    <!-- don't have an account Text -->
+    <TextView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Don't have an account?"
+        android:textColor="#6A5ACD"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:textSize="14sp"/>
+
+
+</LinearLayout>

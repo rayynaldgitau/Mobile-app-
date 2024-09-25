@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "959042288015",
+    "project_id": "trial-run-app",
+    "storage_bucket": "trial-run-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959042288015:android:6602ad05dc9eb931f2f3fa",
+        "android_client_info": {
+          "package_name": "com.example.trials"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsov5WZnGWq4UOE1TYSUCBGKrm9B9PYKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
