@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,12 +12,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:theme="@style/Theme.Trials"
         tools:targetApi="31" >
 
         <activity
-            android:name=".SignUpActivity"
-            android:exported="true" >
+            android:name=".adminInqView"
+            android:exported="false" />
+        <activity
+            android:name=".launchActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +28,143 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".adminDash"
             android:exported="false" />
         <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".interview_1"
+            android:exported="false" />
+        <activity
+            android:name=".skill_1"
+            android:exported="false" />
+
+        <activity
+            android:name=".free_page2"
+            android:exported="false" />
+        <activity
+            android:name=".free_page1"
+            android:exported="false" />
+        <activity
+            android:name=".Freelance"
+            android:exported="true" />
+        <activity
+            android:name=".InquiryDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Fetching_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_insertion"
+            android:exported="true" />
+        <activity
+            android:name=".recieve_job_list"
+            android:exported="true" />
+        <activity
+            android:name=".job_category"
+            android:exported="true" />
+        <activity
+            android:name=".seeker_details"
+            android:exported="true" />
+        <activity
+            android:name=".recieve_job_application"
+            android:exported="true" />
+        <activity
+            android:name=".update_delete_view"
+            android:exported="true" />
+        <activity
+            android:name=".edit_jobs"
+            android:exported="true" />
+        <activity
+            android:name=".postjobs_list"
+            android:exported="true" />
+        <activity
+            android:name=".Post_jobs"
+            android:exported="true" />
+        <activity
+            android:name=".company_dash"
+            android:exported="true" />
+        <activity
+            android:name=".job_add"
+            android:exported="true" />
+        <activity
+            android:name=".job_list"
+            android:exported="false" />
+        <activity
+            android:name=".launching"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ReadData"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".recentapplied"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Seeker_profile"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".card_view"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".JobForm_Activity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".jobeditDelete"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".InquiryMainActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light" >
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".JobView_Activity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 

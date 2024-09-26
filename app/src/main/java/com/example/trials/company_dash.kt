@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.ActionBar
-import com.example.trials.databinding.ActivityCompanyDashBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -45,7 +43,7 @@ class company_dash : AppCompatActivity() {
             ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val rjobCount = snapshot.childrenCount.toInt()
-                rvJobCount.text = "Recieve Job Application: $rjobCount"
+                rvJobCount.text = "Recieve com.example.trials.Job Application: $rjobCount"
             }
 
 
@@ -65,7 +63,7 @@ class company_dash : AppCompatActivity() {
         val  viewJobs = findViewById<Button>(R.id.view_jobs)
 
         viewJobs.setOnClickListener {
-            val intent = Intent(this@company_dash,post_jobs::class.java)
+            val intent = Intent(this@company_dash,Post_jobs::class.java)
             startActivity(intent)
             finish()
         }

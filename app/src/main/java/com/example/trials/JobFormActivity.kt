@@ -1,11 +1,12 @@
 package com.example.trials
 
+
 import Job
+
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 
 import com.example.trials.databinding.ActivityJobFormBinding
@@ -14,8 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
-
-class JobForm_Activity : AppCompatActivity() {
+class JobFormActivity : AppCompatActivity() {
 
     // Firebase Realtime Database reference
     private lateinit var databaseRef: DatabaseReference
@@ -54,15 +54,15 @@ class JobForm_Activity : AppCompatActivity() {
 
 
         // Update the UI with the job details(company adapter eken pass karana data xml eke view karanwa)
-        val companyTextView = findViewById<TextView>(R.id.jobname)
-        val locationTextView = findViewById<TextView>(R.id.jobCmpny)
-        // val typeTextView = findViewById<TextView>(R.id.joblocation)
-        val descriptionTextView = findViewById<TextView>(R.id.timejob)
+// Update the UI with the job details
+        val companyTextView = binding.jobname
+        val locationTextView = binding.jobCmpny
+        val descriptionTextView = binding.timejob
 
+        companyName?.let { companyTextView.text = it } ?: run { companyTextView.text = "Company Name Not Available" }
+        location?.let { locationTextView.text = it } ?: run { locationTextView.text = "Location Not Available" }
+        description?.let { descriptionTextView.text = it } ?: run { descriptionTextView.text = "Description Not Available" }
 
-        companyTextView.text = companyName
-        locationTextView.text = location
-        descriptionTextView.text = description
         //typeTextView.text=type
 
 
@@ -127,7 +127,7 @@ class JobForm_Activity : AppCompatActivity() {
                         Toast.makeText(this, "File upload failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    // If no CV file has been chosen, create a Job object without the download URL
+                    // If no CV file has been chosen, create a com.example.trials.Job object without the download URL
                     val Jobs = Job(fullName,email,gender, gender2, address, mobile, jobName)
 
                     val jobFormRef = databaseRef.child("jobForms").push()
