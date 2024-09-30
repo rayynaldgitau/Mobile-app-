@@ -1,8 +1,6 @@
 package com.example.trials
 
 
-import Job
-
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -127,7 +125,7 @@ class JobFormActivity : AppCompatActivity() {
                         Toast.makeText(this, "File upload failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    // If no CV file has been chosen, create a com.example.trials.Job object without the download URL
+                    // If no CV file has been chosen, create a com.example.trials.com.example.trials.Job object without the download URL
                     val Jobs = Job(fullName,email,gender, gender2, address, mobile, jobName)
 
                     val jobFormRef = databaseRef.child("jobForms").push()

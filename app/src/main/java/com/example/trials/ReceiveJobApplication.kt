@@ -1,6 +1,5 @@
 package com.example.trials
 
-import Job
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.google.firebase.database.R
 
 class ReceiveJobApplication : AppCompatActivity() {
 
