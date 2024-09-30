@@ -7,24 +7,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.*
-import com.google.firebase.database.R
-
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ReadData : AppCompatActivity() {
     private lateinit var etUsername: EditText
     private lateinit var readDataBtn: Button
-    private lateinit var databaseRef: DatabaseReference
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.retrieveapplication)
 
-        // Get a reference to your Firebase Realtime Database
-        val database = FirebaseDatabase.getInstance()
-
-        // Get a reference to the "jobForms" node in your database
-        val jobFormsRef = database.getReference("jobForms")
+        // Initialize Firestore
+        db = FirebaseFirestore.getInstance()
 
         // Get references to the UI components
         etUsername = findViewById(R.id.etusername)
@@ -35,24 +30,24 @@ class ReadData : AppCompatActivity() {
             // Get the username input from the user
             val fullName = etUsername.text.toString()
 
-            // Query the jobForms node to find the first child with a matching fullName value
-            val query = jobFormsRef.orderByChild("fullName").equalTo(fullName)
-            query.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
-                        // Get the first child (there should only be one matching child)
-                        val jobFormSnapshot = snapshot.children.first()
+            // Query the Firestore "jobForms" collection to find documents with a matching fullName field
+            db.collection("jobForms")
+                .whereEqualTo("fullName", fullName)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    if (!querySnapshot.isEmpty) {
+                        // Get the first matching document
+                        val jobFormDocument = querySnapshot.documents.first()
 
-                        // Get the job form data
-                        val jobName = jobFormSnapshot.child("jobName").getValue(String::class.java)
-                        val fullName =
-                            jobFormSnapshot.child("fullName").getValue(String::class.java)
-                        val email = jobFormSnapshot.child("email").getValue(String::class.java)
-                        val gender = jobFormSnapshot.child("gender").getValue(Boolean::class.java)
-                        val gender2 = jobFormSnapshot.child("gender2").getValue(Boolean::class.java)
-                        val address = jobFormSnapshot.child("address").getValue(String::class.java)
-                        val mobile = jobFormSnapshot.child("mobile").getValue(String::class.java)
-                        val cvUrl = jobFormSnapshot.child("cvUrl").getValue(String::class.java)
+                        // Extract data from the document
+                        val jobName = jobFormDocument.getString("jobName")
+                        val fullName = jobFormDocument.getString("fullName")
+                        val email = jobFormDocument.getString("email")
+                        val gender = jobFormDocument.getBoolean("gender")
+                        val gender2 = jobFormDocument.getBoolean("gender2")
+                        val address = jobFormDocument.getString("address")
+                        val mobile = jobFormDocument.getString("mobile")
+                        val cvUrl = jobFormDocument.getString("cvUrl")
 
                         // Create a Job object from the retrieved data
                         val job = Job(
@@ -61,11 +56,11 @@ class ReadData : AppCompatActivity() {
                         )
 
                         // Pass the Job object to your details activity
-                        val intent = Intent(this@ReadData,jobeditDelete::class.java)
+                        val intent = Intent(this@ReadData, jobeditDelete::class.java)
                         intent.putExtra("job", job)
                         startActivity(intent)
                     } else {
-                        // Show a message indicating that no job form was found with the provided full name
+                        // Show a message indicating no job form was found with the provided full name
                         Toast.makeText(
                             this@ReadData,
                             "No job form found with the provided full name",
@@ -73,21 +68,18 @@ class ReadData : AppCompatActivity() {
                         ).show()
                     }
                 }
-
-                override fun onCancelled(error: DatabaseError) {
+                .addOnFailureListener { exception ->
                     // Show an error message
                     Toast.makeText(
                         this@ReadData,
-                        "Failed to retrieve job form: ${error.message}",
+                        "Failed to retrieve job form: ${exception.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            })
         }
     }
-
 }
 
 fun Intent.putExtra(s: String, job: Job) {
-
+    // Serialize and add the Job object to the Intent here
 }

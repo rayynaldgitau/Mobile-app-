@@ -5,19 +5,19 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class Freelance: AppCompatActivity() {
-    lateinit var btnGetstart : Button
+class FreePage1: AppCompatActivity() {
+    private lateinit var btnNext1 : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_freelance)
+        setContentView(R.layout.activity_free_page1)
         supportActionBar?.hide()
 
-        btnGetstart = findViewById(R.id.btnGetstart)
+        btnNext1 = findViewById(R.id.btnNext1)
 
-        btnGetstart.setOnClickListener{
+        btnNext1.setOnClickListener{
 
-            val intent = Intent(this,FreePage1::class.java)
+            val intent = Intent(this,FreePage2::class.java)
             startActivity(intent)
         }
     }

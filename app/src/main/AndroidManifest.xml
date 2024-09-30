@@ -86,7 +86,7 @@
             android:name=".Post_jobs"
             android:exported="true" />
         <activity
-            android:name=".company_dash"
+            android:name=".CompanyDash"
             android:exported="true" />
         <activity
             android:name=".job_add"

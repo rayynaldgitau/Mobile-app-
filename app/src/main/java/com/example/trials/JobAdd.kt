@@ -100,7 +100,7 @@ class JobAdd : AppCompatActivity() {
 
     }
     override fun onBackPressed() {
-        val intent = Intent(this, company_dash::class.java)
+        val intent = Intent(this, CompanyDash::class.java)
         startActivity(intent)
         finish()
     }

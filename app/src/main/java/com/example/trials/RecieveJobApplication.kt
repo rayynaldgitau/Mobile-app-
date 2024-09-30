@@ -1,15 +1,21 @@
 package com.example.trials
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.R
+import com.google.firebase.database.ValueEventListener
+import Job
 
-class ReceiveJobApplication : AppCompatActivity() {
+class RecieveJobApplication:AppCompatActivity() {
 
     private  lateinit var SekRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
@@ -51,7 +57,7 @@ class ReceiveJobApplication : AppCompatActivity() {
                     mAdapter.setOnItemClickListener(object : SeekerAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@recieve_job_application, seeker_details::class.java)
+                            val intent = Intent(this@recieveJobApplication, SeekerDetails::class.java)
 
                             //put extras
                             intent.putExtra("fullName", SekList[position].fullName)

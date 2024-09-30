@@ -73,7 +73,7 @@ class InquiryDetailsActivity: AppCompatActivity() {
         mTask.addOnSuccessListener {
             Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, Fetching_Activity::class.java)
+            val intent = Intent(this, FetchingActivity::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{ error ->

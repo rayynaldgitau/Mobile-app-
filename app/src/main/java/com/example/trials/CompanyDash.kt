@@ -10,7 +10,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class company_dash : AppCompatActivity() {
+class CompanyDash : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +55,7 @@ class company_dash : AppCompatActivity() {
 
 
         createJob.setOnClickListener {
-            val intent = Intent(this@company_dash,job_add::class.java)
+            val intent = Intent(this@CompanyDash,JobAdd::class.java)
             startActivity(intent)
             finish()
         }
@@ -63,7 +63,7 @@ class company_dash : AppCompatActivity() {
         val  viewJobs = findViewById<Button>(R.id.view_jobs)
 
         viewJobs.setOnClickListener {
-            val intent = Intent(this@company_dash,Post_jobs::class.java)
+            val intent = Intent(this@CompanyDash,PostJobs::class.java)
             startActivity(intent)
             finish()
         }
@@ -71,7 +71,7 @@ class company_dash : AppCompatActivity() {
         val notifi = findViewById<Button>(R.id.notifi)
 
         notifi.setOnClickListener {
-            val intent = Intent(this@company_dash,recieve_job_application::class.java)
+            val intent = Intent(this@CompanyDash,RecieveJobApplication::class.java)
             startActivity(intent)
             finish()
         }
@@ -85,12 +85,12 @@ class company_dash : AppCompatActivity() {
 
         val inq = findViewById<ImageButton>(R.id.vInqury)
         inq.setOnClickListener {
-            val intent = Intent(this,activity_insertion::class.java)
+            val intent = Intent(this,ActivityInsertion::class.java)
             startActivity(intent)
         }
         val vCategory=findViewById<ImageButton>(R.id.vCategory)
         vCategory.setOnClickListener {
-            val intent = Intent(this,job_category::class.java)
+            val intent = Intent(this,JobCategory::class.java)
             startActivity(intent)
         }
 

@@ -57,7 +57,7 @@ class FetchingActivity : AppCompatActivity(){
                     mAdapter.setOnItemClickListener(object : EmpAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@Fetching_Activity, InquiryDetailsActivity::class.java)
+                            val intent = Intent(this@FetchingActivity, InquiryDetailsActivity::class.java)
 
                             //put extras
                             intent.putExtra("Id", List[position].Id)

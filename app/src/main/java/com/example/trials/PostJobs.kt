@@ -48,7 +48,7 @@ class PostJobs : AppCompatActivity() {
 
 
         vProfile.setOnClickListener {
-            val intent = Intent(this,company_dash::class.java)
+            val intent = Intent(this,CompanyDash::class.java)
             startActivity(intent)
         }
         vCategory.setOnClickListener {
@@ -124,7 +124,7 @@ class PostJobs : AppCompatActivity() {
 
     }
     override fun onBackPressed() {
-        val intent = Intent(this, company_dash::class.java)
+        val intent = Intent(this, CompanyDash::class.java)
         startActivity(intent)
         finish()
     }

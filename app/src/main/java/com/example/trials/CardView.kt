@@ -19,7 +19,7 @@ class CardView : AppCompatActivity() {
         // Set a click listener for the button
         applyButton.setOnClickListener {
             // Create an intent to start the ApplyActivity
-            val intent = Intent(this,JobView_Activity::class.java)
+            val intent = Intent(this,JobViewActivity::class.java)
             startActivity(intent)
         }
         val imageButton = findViewById<ImageButton>(R.id.profile)
@@ -31,7 +31,7 @@ class CardView : AppCompatActivity() {
 
         val category = findViewById<ImageButton>(R.id.catogery)
         category.setOnClickListener {
-            val intent = Intent(this, JobView_Activity::class.java)
+            val intent = Intent(this, JobViewActivity::class.java)
             startActivity(intent)
         }
 
@@ -44,7 +44,7 @@ class CardView : AppCompatActivity() {
 
         val inq= findViewById<ImageButton>(R.id.imageView6)
         inq.setOnClickListener {
-            val intent = Intent(this, activity_insertion::class.java)
+            val intent = Intent(this, ActivityInsertion::class.java)
             startActivity(intent)
         }
 
