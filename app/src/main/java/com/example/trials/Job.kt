@@ -1,4 +1,4 @@
-package com.example.trials
+
 
 data class Job(
     var fullName: String = "",
