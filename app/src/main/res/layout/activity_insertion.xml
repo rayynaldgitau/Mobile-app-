@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:layout_marginTop="0px"
+        app:cardBackgroundColor="@android:color/transparent"
         android:background="@drawable/custom_edittext"
         app:cardCornerRadius="@dimen/cornerRadius1"
 
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/add"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -101,6 +102,7 @@
                 android:layout_height="160px"
                 android:layout_marginLeft="35px"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/background_box"
                 android:layout_marginRight="35px"
                 android:backgroundTint="#B5FEAF"
                 android:text="@string/submitbtn"

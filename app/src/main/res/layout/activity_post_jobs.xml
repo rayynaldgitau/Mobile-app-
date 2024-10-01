@@ -11,9 +11,9 @@
         android:id="@+id/post_jobs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="Post Jobs"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="44dp"
+        android:text="Jobs"
         android:textColor="#0E0D0D"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -26,7 +26,7 @@
         android:layout_height="50dp"
         android:layout_margin="20dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/border"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         android:paddingStart="10dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_jobs" />
 
@@ -43,28 +43,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="200dp"
-        android:background="@drawable/top_border"
 
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search">
-<!--        android:backgroundTint="@color/material_dynamic_NEUTRAL95"-->
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        android:backgroundTint="@color/material_dynamic_NEUTRAL95">
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="240dp"
+            android:layout_marginStart="117dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textColor="#E5E4E2"
             android:text="Recently Post Jobs "
             android:textAllCaps="false"
             android:textSize="20sp" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvJob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             tools:listitem="@layout/activity_postjobs_list" />
 
         <TextView
@@ -96,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@drawable/background_box"
             app:srcCompat="@drawable/home" />
 
         <ImageButton
@@ -103,6 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@drawable/background_box"
             app:srcCompat="@drawable/category" />
 
         <ImageButton
@@ -110,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@drawable/background_box"
             app:srcCompat="@drawable/inquiry" />
 
         <ImageButton
@@ -117,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@drawable/background_box"
             app:srcCompat="@drawable/profilenav" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_view"
-    tools:context=".adminDash">
+    tools:context=".AdminDash">
 
     <View
         android:id="@+id/top_view"
@@ -15,9 +15,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/bb"
+        android:background="@drawable/rounded_corners"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+    />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -43,31 +45,30 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-
+            app:cardBackgroundColor="@android:color/transparent"
             android:layout_margin="12dp"
             app:cardElevation="12dp">
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_width="177dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/background_box"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:rotationX="4">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/baseline_border_color_24" />
+                    android:src="@drawable/count2"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/job"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -83,6 +84,7 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="12dp">
 
 
@@ -97,7 +99,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/baseline_question_mark_24" />
+                    android:src="@drawable/question" />
 
                 <TextView
 
@@ -105,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Others"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -121,6 +123,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="12dp">
 
 
@@ -135,14 +138,14 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/baseline_library_books_24" />
+                    android:src="@drawable/list" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/skills"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/text"
                     android:textStyle="bold" />
 
@@ -158,22 +161,24 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="12dp">
 
 
             <LinearLayout
-                android:layout_width="154dp"
-                android:layout_height="164dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/background_box"
-                android:backgroundTint="@color/white"
+
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="TextSizeCheck">
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/baseline_feedback_24" />
+                    android:src="@drawable/feedback" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -181,7 +186,7 @@
                     android:layout_gravity="center_horizontal"
                     android:text="@string/feedbackAdd"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -197,7 +202,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Admin Dashboard"
-        android:textColor="@color/white"
+        android:textColor="@color/darkBlue"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/top_view"

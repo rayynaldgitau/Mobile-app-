@@ -11,9 +11,9 @@
         android:id="@+id/recieve_jobs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="Recieve Job Application"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="4dp"
+        android:text="Job Application"
         android:textColor="#0E0D0D"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/top_border"
+
 
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,8 +56,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#E5E4E2"
+            android:layout_marginStart="90dp"
             android:padding="10dp"
-            android:text="Recently recieve job applications "
+            android:text=" Recieved job applications "
             android:textAllCaps="false"
             android:textSize="20sp" />
 

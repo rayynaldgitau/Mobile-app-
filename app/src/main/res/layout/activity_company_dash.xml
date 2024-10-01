@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:text="Comapny DashBoard"
         android:textColor="@color/black"
-        android:textSize="34dp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="650dp"
         android:layout_margin="10dp"
-        android:background="@drawable/border"
+
         android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -64,11 +65,12 @@
 
             <Button
                 android:id="@+id/view_jobs"
+                android:background="@drawable/background_box"
                 android:layout_width="240dp"
                 android:layout_height="110dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"
+
                 android:padding="20dp"
                 android:text="View Post Jobs"
                 android:textColor="@color/black"
@@ -94,9 +96,9 @@
                 android:id="@+id/notifi"
                 android:layout_width="240dp"
                 android:layout_height="110dp"
+                android:background="@drawable/background_box"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:backgroundTint="@color/design_default_color_on_primary"
+                android:layout_marginBottom="10dp"
                 android:padding="20dp"
                 android:text="Notification"
                 android:textColor="@color/black"
@@ -120,6 +122,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/background_box"
             android:backgroundTint="#31EF39"
             android:padding="20dp"
             android:text="Create a job"
@@ -143,6 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/home" />
 
         <ImageButton
@@ -150,6 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/category" />
 
         <ImageButton
@@ -157,6 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/inquiry" />
 
         <ImageButton
@@ -164,6 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/profilenav" />
     </LinearLayout>
 

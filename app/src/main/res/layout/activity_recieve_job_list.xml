@@ -56,7 +56,7 @@
                     android:layout_width="15dp"
                     android:layout_height="16dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/resource_private"
+                    android:src="@drawable/document"
                     tools:ignore="DuplicateIds" />
 
 
@@ -112,6 +112,7 @@
                     android:background="@color/green"
                     android:backgroundTint="@color/light_green"
                     android:ellipsize="end"
+                    android:background="@drawable/backgroundbox2"
                     android:paddingStart="6dp"
                     android:paddingTop="2dp"
                     android:paddingEnd="6dp"

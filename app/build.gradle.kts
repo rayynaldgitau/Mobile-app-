@@ -79,6 +79,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation (libs.picasso)
+    implementation (libs.androidx.constraintlayout)
+    implementation (libs.androidx.cardview)
+    implementation (libs.androidx.gridlayout)
+
 
     // Espresso dependencies
     androidTestImplementation (libs.androidx.espresso.core.v340)
