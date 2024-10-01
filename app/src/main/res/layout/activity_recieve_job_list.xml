@@ -11,7 +11,7 @@
     app:cardUseCompatPadding="true"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".recieve_job_list">
+    tools:context=".RecieveJobList">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -109,7 +109,6 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
-                    android:background="@color/green"
                     android:backgroundTint="@color/light_green"
                     android:ellipsize="end"
                     android:background="@drawable/backgroundbox2"
