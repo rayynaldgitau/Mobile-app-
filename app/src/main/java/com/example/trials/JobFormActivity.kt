@@ -1,6 +1,7 @@
 package com.example.trials
 
 
+import Job
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -83,7 +84,7 @@ class JobFormActivity : AppCompatActivity() {
                     val uploadTask = fileRef.putFile(fileUri!!)
                     uploadTask.addOnSuccessListener {
                         fileRef.downloadUrl.addOnSuccessListener { downloadUri ->
-                            val Jobs = Job(
+                            val jobs = Job(
                                 fullName,
                                 email,
                                 gender,
@@ -96,7 +97,7 @@ class JobFormActivity : AppCompatActivity() {
                                 )
 
                             val jobFormRef = databaseRef.child("jobForms").push()
-                            jobFormRef.setValue(Jobs).addOnSuccessListener {
+                            jobFormRef.setValue(jobs).addOnSuccessListener {
                                 // Show success message
                                 Toast.makeText(
                                     this,
@@ -143,7 +144,7 @@ class JobFormActivity : AppCompatActivity() {
                         binding.jobName.setText("")
                         fileUri = null
 
-                        val intent = Intent(this,card_view::class.java)
+                        val intent = Intent(this,CardView::class.java)
                         // Start the new activity
                         startActivity(intent)
 

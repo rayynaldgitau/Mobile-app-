@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
 
-    android:background="@drawable/top_box"
+    android:background=""
     tools:context=".MainActivity">
 
   <ImageView
@@ -122,6 +122,7 @@
       android:layout_marginEnd="16dp"
       android:background="@drawable/background_box"
       android:text="@string/Job_desc"
+      android:gravity="center"
       android:textSize="16sp"
       android:textColor="#E5E4E2"
       app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +152,7 @@
       android:layout_marginTop="16dp"
       android:background="@drawable/background_box"
       android:text="@string/Job_req"
+      android:gravity="center"
       android:textColor="#E5E4E2"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.41"

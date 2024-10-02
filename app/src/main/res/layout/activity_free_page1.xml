@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".free_page1">
+    tools:context=".FreePage1">
 
     <TextView
         android:layout_width="wrap_content"

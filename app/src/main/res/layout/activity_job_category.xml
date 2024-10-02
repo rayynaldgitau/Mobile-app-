@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E4E2"
     tools:context=".JobCategory">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,10 +71,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/border"
+        android:background="#E5E4E2"
+        android:backgroundColour="@color/purple"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -108,7 +109,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/it" />
+                    app:srcCompat="@drawable/it2" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -130,6 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -144,7 +146,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/hook" />
+                    app:srcCompat="@drawable/construction" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -174,6 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -188,7 +191,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/graduate" />
+                    app:srcCompat="@drawable/graduation" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -210,6 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -254,6 +258,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -266,9 +271,10 @@
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView7"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/report" />
+                    app:srcCompat="@drawable/finance" />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -290,6 +296,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:elevation="10dp"
                 android:background="@drawable/border">
 
                 <ImageView
@@ -337,9 +344,10 @@
 
         <ImageButton
             android:id="@+id/vhome"
-            android:layout_width="wrap_content"
+            android:layout_width="69dp"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/home" />
 
         <ImageButton
@@ -347,6 +355,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/category" />
 
         <ImageButton
@@ -354,6 +363,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/inquiry" />
 
         <ImageButton
@@ -361,6 +371,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:background="@null"
             app:srcCompat="@drawable/profilenav" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

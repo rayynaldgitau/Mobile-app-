@@ -1,131 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center"
-    android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    android:background="@drawable/bb"
+    tools:context=".SignInActivity">
 
-    <!-- Logo Image -->
+
     <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/logo3"
-        android:contentDescription="Logo"
-        android:layout_gravity="center"/>
+        android:id="@+id/imageView2"
+        android:layout_width="272dp"
+        android:layout_height="225dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546"
+        app:srcCompat="@drawable/jobifyicon2" />
 
-    <!-- Welcome Text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome To Jobify"
-        android:fontFamily="sans-serif"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#4B0082"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
 
-    <!-- Email Input -->
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="5dp"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_background"
-        android:padding="12dp">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="308dp"
+        app:boxStrokeColor="@color/purple"
+        app:hintTextColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@null"
-            android:drawableStart="@drawable/gmail"
-            android:drawablePadding="8dp"
-            android:fontFamily="sans-serif"
-            android:hint="Email address"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/background_box"
+
+            android:hint="Type your Email"
+            android:gravity="center"
             android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:padding="8dp"
-            android:textSize="16sp"
-            tools:ignore="VisualLintTextFieldSize" />
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
 
-    <!-- Password Input -->
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="5dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        app:boxStrokeColor="@color/purple"
+        app:hintTextColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailLayout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passET"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/background_box"
+            android:hint="Type Your Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="372dp"
+        android:layout_height="46dp"
+        android:checkedButton="@+id/radioSeeker"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_background"
-        android:padding="12dp">
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
+        app:layout_constraintVertical_bias="0.444">
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/Lseeker"
+            android:layout_width="106dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_weight="1"
-            android:background="@null"
-            android:drawableEnd="@drawable/ic_eye"
-            android:drawablePadding="8dp"
-            android:fontFamily="sans-serif"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:padding="8dp"
-            android:textSize="16sp"
-            tools:ignore="VisualLintTextFieldSize" />
+            android:background="@drawable/background_box"
+            android:checked="true"
+            android:text="Seeker"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/Lcompany"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_box"
+            android:text="Company"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/Ladmin"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_box"
+            android:text="Admin"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Login"
-        android:textSize="18sp"
-        android:backgroundTint="#6A5ACD"
-        android:elevation="5dp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="16dp"
-        android:padding="12dp"
-        tools:ignore="VisualLintButtonSize" />
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/purple"
+        android:text="Sign In"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
+        app:layout_constraintVertical_bias="0.432" />
 
-    <!-- Forgot Password Text -->
     <TextView
-        android:id="@+id/forgotPassword"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="I forgot my password"
-        android:textColor="#6A5ACD"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
-        android:textSize="14sp"/>
+        android:text="Not Registered Yet , Sign Up !"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <!-- don't have an account Text -->
-    <TextView
-        android:id="@+id/signUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Don't have an account?"
-        android:textColor="#6A5ACD"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
-        android:textSize="14sp"/>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
