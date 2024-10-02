@@ -25,7 +25,7 @@ class CardView : AppCompatActivity() {
         val imageButton = findViewById<ImageButton>(R.id.profile)
 
         imageButton.setOnClickListener {
-            val intent = Intent(this,Seeker_profile::class.java)
+            val intent = Intent(this,SeekerProfile::class.java)
             startActivity(intent)
         }
 

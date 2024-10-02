@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.trials.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignInActivity : AppCompatActivity() {
@@ -19,60 +20,53 @@ class SignInActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.textView.setOnClickListener{
-            val intent = Intent(this,SignUpActivity::class.java)
+        // Navigate to SignUpActivity
+        binding.textView.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
-        binding.button.setOnClickListener{
+        // Handle the sign-in process
+        binding.button.setOnClickListener {
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
 
-            if(email.isNotEmpty() && pass.isNotEmpty()) {
+            // Validate email and password input
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+                // Validate if a user type is selected
                 val selectedRadioButtonId = binding.radioGroup.checkedRadioButtonId
                 if (selectedRadioButtonId == -1) {
                     Toast.makeText(this, "Please select a user type", Toast.LENGTH_LONG).show()
                 } else {
+                    // Get selected user type
                     val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
-                    val userType = selectedRadioButton.text.toString()
+                    val userType = selectedRadioButton?.text.toString()
 
+                    // Handle sign-in based on user type
                     when (userType) {
-
-                        "Company" -> {
-                            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    val intent = Intent(this, company_dash::class.java)
-                                    startActivity(intent)
-                                } else {
-                                    Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
-                                }
-                            }
-                        }
-                        "Seeker" -> {
-                            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    val intent = Intent(this, InquiryMainActivity::class.java)
-                                    startActivity(intent)
-                                } else {
-                                    Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
-                                }
-                            }
-                        }
-
-                        "Admin" -> {
-                            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    val intent = Intent(this, adminDash::class.java)
-                                    startActivity(intent)
-                                } else {
-                                    Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
-                                }
-                            }
-                        }
+                        "Company" -> signInUser(email, pass, CompanyDash::class.java)
+                        "Seeker" -> signInUser(email, pass, InquiryMainActivity::class.java)
+                        "Admin" -> signInUser(email, pass, AdminDash::class.java)
+                        else -> Toast.makeText(this, "Invalid user type selected", Toast.LENGTH_LONG).show()
                     }
                 }
             } else {
-                Toast.makeText(this,"Empty fields are not allowed !!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Empty fields are not allowed!!!", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    // Reusable function to handle sign-in and navigation
+    private fun <T> signInUser(email: String, password: String, destinationActivity: Class<T>) {
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                // Redirect to the respective dashboard and finish the current activity
+                val intent = Intent(this, destinationActivity)
+                startActivity(intent)
+                finish()
+            } else {
+                // Display a more user-friendly error message
+                Toast.makeText(this, task.exception?.localizedMessage ?: "Login failed. Please try again.", Toast.LENGTH_LONG).show()
             }
         }
     }

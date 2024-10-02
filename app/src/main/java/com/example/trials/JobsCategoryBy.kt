@@ -57,13 +57,13 @@ class JobsCategoryBy : AppCompatActivity() {
         val imageButton = findViewById<ImageButton>(R.id.vProfile)
 
         imageButton.setOnClickListener {
-            val intent = Intent(this,Seeker_profile::class.java)
+            val intent = Intent(this,SeekerProfile::class.java)
             startActivity(intent)
         }
 
         val home = findViewById<ImageButton>(R.id.vhome)
         home.setOnClickListener {
-            val intent = Intent(this,activity_insertion::class.java)
+            val intent = Intent(this,ActivityInsertion::class.java)
             startActivity(intent)
         }
 

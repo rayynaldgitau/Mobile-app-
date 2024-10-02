@@ -4,30 +4,30 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.trials.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.R
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 
 class SignUpActivity : AppCompatActivity() {
-    //Declare variables and references
+    // Declare variables and references
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var registeredUsersRef: DatabaseReference
+    private lateinit var usersRef: DatabaseReference
     private var totalRegisteredUsers = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//Set the activity's layout using ViewBinding
+        // Set the activity's layout using ViewBinding
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//Initialize Firebase Authentication and the database reference:
+
+        // Initialize Firebase Authentication and the database reference
         firebaseAuth = FirebaseAuth.getInstance()
         registeredUsersRef = FirebaseDatabase.getInstance().reference.child("registeredUsersCount")
-//Read the current count of registered users from the database
+        usersRef = FirebaseDatabase.getInstance().reference.child("users")
+
+        // Read the current count of registered users from the database
         registeredUsersRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -36,24 +36,29 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Handle database error
+                Toast.makeText(this@SignUpActivity, "Failed to load user count", Toast.LENGTH_SHORT).show()
             }
         })
-//Set a click listener for the sign-up button
-        binding.button.setOnClickListener {
 
+        // Set a click listener for the sign-up button
+        binding.button.setOnClickListener {
             // Retrieve user input (email, password, etc.)
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
 
+            // Validate if a radio button is selected
             val selectedOption = binding.radioGroup.checkedRadioButtonId
             val userType: String = if (selectedOption == R.id.radioSeeker) {
                 "Seeker"
-            } else {
+            } else if (selectedOption == R.id.radioCompany) {
                 "Company"
+            } else {
+                Toast.makeText(this, "Please select a user type", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
             }
-// Validate input fields
+
+            // Validate input fields
             if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
                     // Create user account using Firebase Authentication
@@ -61,19 +66,30 @@ class SignUpActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             totalRegisteredUsers++
 
-                            val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
-
                             // Store the updated count in the database
                             registeredUsersRef.setValue(totalRegisteredUsers)
+
+                            // Store user data in the database
+                            val userId = firebaseAuth.currentUser?.uid ?: ""
+                            val userMap = hashMapOf<String, Any>(
+                                "email" to email,
+                                "userType" to userType
+                            )
+                            usersRef.child(userId).setValue(userMap)
+
+                            // Redirect to the SignInActivity
+                            val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+                            startActivity(intent)
+                            finish()  // Finish current activity
                         } else {
-                            Toast.makeText(this, task.exception.toString(), Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_LONG).show()
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Password is not matching", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(this, "Empty fields are not allowed !!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_LONG).show()
             }
         }
     }

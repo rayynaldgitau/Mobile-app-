@@ -31,7 +31,7 @@ class AdminDash : AppCompatActivity() {
 
         btnInq.setOnClickListener{
 
-            val intent = Intent(this,adminInqView::class.java)
+            val intent = Intent(this,AdminInqView::class.java)
             startActivity(intent)
         }
     }

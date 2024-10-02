@@ -44,7 +44,7 @@ class InquiryMainActivity : AppCompatActivity() {
 
         btnI.setOnClickListener{
 
-            val intent = Intent(this,Fetching_Activity::class.java)
+            val intent = Intent(this,FetchingActivity::class.java)
             startActivity(intent)
         }
 
@@ -57,19 +57,19 @@ class InquiryMainActivity : AppCompatActivity() {
 
         btnInsertData.setOnClickListener{
 
-            val intent = Intent(this,activity_insertion::class.java)
+            val intent = Intent(this,ActivityInsertion::class.java)
             startActivity(intent)
         }
         btnprofile.setOnClickListener{
 
-            val intent = Intent(this, Seeker_profile::class.java)
+            val intent = Intent(this, SeekerProfile::class.java)
             startActivity(intent)
 
         }
 
         Jobview.setOnClickListener{
 
-            val intent = Intent(this, job_category::class.java)
+            val intent = Intent(this, JobCategory::class.java)
             startActivity(intent)
 
         }

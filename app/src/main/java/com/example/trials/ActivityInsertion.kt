@@ -87,7 +87,7 @@ class ActivityInsertion : AppCompatActivity(){
 
         btnJob.setOnClickListener{
 
-            val intent = Intent(this,job_category::class.java)
+            val intent = Intent(this,JobCategory::class.java)
             startActivity(intent)
         }
     }

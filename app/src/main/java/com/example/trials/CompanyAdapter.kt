@@ -32,7 +32,7 @@ class CompanyAdapter (private val jobList: ArrayList<company>) :
         // Set click listener for the list item
         holder.itemView.setOnClickListener {
             // Create an Intent to navigate to the DetailsActivity
-            val intent = Intent(holder.itemView.context,job_list::class.java)
+            val intent = Intent(holder.itemView.context,JobList::class.java)
             // Add the data of the clicked item to the Intent
             intent.putExtra("Ccompany_name", currentItem.CcompanyName)
             intent.putExtra("Ccategory", currentItem.Ccategory)

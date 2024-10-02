@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         // Set a click listener for the button
         applyButton.setOnClickListener {
             // Create an intent to start the ApplyActivity
-            val intent = Intent(this, JobForm_Activity::class.java)
+            val intent = Intent(this, JobFormActivity::class.java)
 
             // Pass the job data to the ApplyActivity using intent extras
             intent.putExtra("Ccompany_name", companyName)

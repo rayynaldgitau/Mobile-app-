@@ -4,20 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.R
-import com.google.firebase.database.ValueEventListener
-import Job
+import com.google.firebase.database.*
+import Job // Ensure this import is correct
+import android.util.Log
+import android.widget.Toast
 
-class RecieveJobApplication:AppCompatActivity() {
+class RecieveJobApplication : AppCompatActivity() {
 
-    private  lateinit var SekRecyclerView: RecyclerView
+    private lateinit var SekRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
     private lateinit var SekList: ArrayList<Job>
     private lateinit var dbRef: DatabaseReference
@@ -31,13 +29,21 @@ class RecieveJobApplication:AppCompatActivity() {
         SekRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
 
-        SekList = arrayListOf<Job>()
+        SekList = arrayListOf()
 
         getSekData()
+
+        // Handling back button press
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val intent = Intent(this@RecieveJobApplication, CompanyDash::class.java)
+                startActivity(intent)
+                finish()
+            }
+        })
     }
 
-    private fun getSekData(){
-
+    private fun getSekData() {
         SekRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
@@ -46,20 +52,20 @@ class RecieveJobApplication:AppCompatActivity() {
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 SekList.clear()
-                if (snapshot.exists()){
-                    for (SekSnap in snapshot.children){
+                if (snapshot.exists()) {
+                    for (SekSnap in snapshot.children) {
                         val SekData = SekSnap.getValue(Job::class.java)
-                        SekList.add(SekData!!)
+                        if (SekData != null) {
+                            SekList.add(SekData)
+                        }
                     }
                     val mAdapter = SeekerAdapter(SekList)
                     SekRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : SeekerAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : SeekerAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
-
-                            val intent = Intent(this@recieveJobApplication, SeekerDetails::class.java)
-
-                            //put extras
+                            val intent = Intent(this@RecieveJobApplication, SeekerDetails::class.java)
+                            // put extras
                             intent.putExtra("fullName", SekList[position].fullName)
                             intent.putExtra("jobName", SekList[position].jobName)
                             intent.putExtra("email", SekList[position].email)
@@ -68,7 +74,6 @@ class RecieveJobApplication:AppCompatActivity() {
                             intent.putExtra("cvUrl", SekList[position].cvUrl)
                             startActivity(intent)
                         }
-
                     })
 
                     SekRecyclerView.visibility = View.VISIBLE
@@ -77,14 +82,12 @@ class RecieveJobApplication:AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
+                // Show a toast message to notify the user
+                Toast.makeText(this@RecieveJobApplication, "Failed to load data. Please try again.", Toast.LENGTH_SHORT).show()
 
+                // Log the error for debugging
+                Log.e("RecieveJobApplication", "Database error: ${error.message}")
+            }
         })
-    }
-    override fun onBackPressed() {
-        val intent = Intent(this, CompanyDash::class.java)
-        startActivity(intent)
-        finish()
     }
 }

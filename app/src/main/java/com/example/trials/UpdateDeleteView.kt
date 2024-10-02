@@ -147,7 +147,7 @@ class UpdateDeleteView: AppCompatActivity() {
         mTask.addOnSuccessListener {
             Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, post_jobs::class.java)
+            val intent = Intent(this, PostJobs::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{ error ->

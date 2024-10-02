@@ -1,5 +1,6 @@
 package com.example.trials
 
+import Job
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -69,7 +70,7 @@ class JobEditDelete: AppCompatActivity() {
                 .addOnSuccessListener {
                     // Show a success message
                     Toast.makeText(
-                        this@jobeditDelete,
+                        this@JobEditDelete,
                         "Data updated successfully",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -77,7 +78,7 @@ class JobEditDelete: AppCompatActivity() {
                 .addOnFailureListener {
                     // Show an error message
                     Toast.makeText(
-                        this@jobeditDelete,
+                        this@JobEditDelete,
                         "Failed to update data: ${it.message}",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -95,7 +96,7 @@ class JobEditDelete: AppCompatActivity() {
                 .addOnSuccessListener {
                     // Show a success message
                     Toast.makeText(
-                        this@jobeditDelete,
+                        this@JobEditDelete,
                         "Data deleted successfully",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -106,7 +107,7 @@ class JobEditDelete: AppCompatActivity() {
                 .addOnFailureListener {
                     // Show an error message
                     Toast.makeText(
-                        this@jobeditDelete,
+                        this@JobEditDelete,
                         "Failed to delete data: ${it.message}",
                         Toast.LENGTH_SHORT
                     ).show()

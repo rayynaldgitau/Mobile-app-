@@ -1,5 +1,6 @@
 package com.example.trials
 
+import Job
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,7 +52,7 @@ class ReceiveJobApplication : AppCompatActivity() {
                     mAdapter.setOnItemClickListener(object : SeekerAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@recieve_job_application, seeker_details::class.java)
+                            val intent = Intent(this@ReceiveJobApplication, SeekerDetails::class.java)
 
                             //put extras
                             intent.putExtra("fullName", SekList[position].fullName)
@@ -77,6 +78,7 @@ class ReceiveJobApplication : AppCompatActivity() {
         })
     }
     override fun onBackPressed() {
+        super.onBackPressed()
         val intent = Intent(this, CompanyDash::class.java)
         startActivity(intent)
         finish()

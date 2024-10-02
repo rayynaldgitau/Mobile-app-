@@ -56,7 +56,7 @@ class ReadData : AppCompatActivity() {
                         )
 
                         // Pass the Job object to your details activity
-                        val intent = Intent(this@ReadData, jobeditDelete::class.java)
+                        val intent = Intent(this@ReadData, JobEditDelete::class.java)
                         intent.putExtra("job", job)
                         startActivity(intent)
                     } else {

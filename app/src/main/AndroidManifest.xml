@@ -13,14 +13,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Trials"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31" >
 
         <activity
-            android:name=".adminInqView"
+            android:name=".AdminInqView"
             android:exported="false" />
         <activity
-            android:name=".launchActivity"
+            android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".adminDash"
+            android:name=".AdminDash"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
@@ -38,17 +38,17 @@
             android:name=".SignInActivity"
             android:exported="true" />
         <activity
-            android:name=".interview_1"
+            android:name=".Interview1"
             android:exported="false" />
         <activity
-            android:name=".skill_1"
+            android:name=".Skill1"
             android:exported="false" />
 
         <activity
-            android:name=".free_page2"
+            android:name=".FreePage2"
             android:exported="false" />
         <activity
-            android:name=".free_page1"
+            android:name=".FreePage1"
             android:exported="false" />
         <activity
             android:name=".Freelance"
@@ -57,46 +57,46 @@
             android:name=".InquiryDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".Fetching_Activity"
+            android:name=".FetchingActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_insertion"
+            android:name=".ActivityInsertion"
             android:exported="true" />
         <activity
-            android:name=".recieve_job_list"
+            android:name=".RecieveJobList"
             android:exported="true" />
         <activity
-            android:name=".job_category"
+            android:name=".JobCategory"
             android:exported="true" />
         <activity
-            android:name=".seeker_details"
+            android:name=".SeekerDetails"
             android:exported="true" />
         <activity
-            android:name=".recieve_job_application"
+            android:name=".ReceiveJobApplication"
             android:exported="true" />
         <activity
-            android:name=".update_delete_view"
+            android:name=".UpdateDeleteView"
             android:exported="true" />
         <activity
-            android:name=".edit_jobs"
+            android:name=".EditJobs"
             android:exported="true" />
         <activity
-            android:name=".postjobs_list"
+            android:name=".PostJobsList"
             android:exported="true" />
         <activity
-            android:name=".Post_jobs"
+            android:name=".PostJobs"
             android:exported="true" />
         <activity
             android:name=".CompanyDash"
             android:exported="true" />
         <activity
-            android:name=".job_add"
+            android:name=".JobAdd"
             android:exported="true" />
         <activity
-            android:name=".job_list"
+            android:name=".JobList"
             android:exported="false" />
         <activity
-            android:name=".launching"
+            android:name=".Launching"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -110,35 +110,35 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".recentapplied"
+            android:name=".RecentApplied"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Seeker_profile"
+            android:name=".SeekerProfile"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".card_view"
+            android:name=".CardView"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JobForm_Activity"
+            android:name=".JobFormActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".jobeditDelete"
+            android:name=".JobEditDelete"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -161,7 +161,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JobView_Activity"
+            android:name=".JobViewActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

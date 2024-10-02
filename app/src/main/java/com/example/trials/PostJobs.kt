@@ -1,15 +1,17 @@
 package com.example.trials
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.google.firebase.database.R
+import java.text.DateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -52,13 +54,13 @@ class PostJobs : AppCompatActivity() {
             startActivity(intent)
         }
         vCategory.setOnClickListener {
-            val intent = Intent(this,job_category::class.java)
+            val intent = Intent(this,JobCategory::class.java)
             startActivity(intent)
         }
 
 
         vInqury.setOnClickListener {
-            val intent = Intent(this,activity_insertion::class.java)
+            val intent = Intent(this,ActivityInsertion::class.java)
             startActivity(intent)
         }
 
@@ -88,13 +90,13 @@ class PostJobs : AppCompatActivity() {
                     }
 
 
-                    val mAdapter = jobsAdapter(comList)
+                    val mAdapter = JobsAdapter(comList)
                     jobRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : jobsAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : JobsAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@Post_jobs, update_delete_view::class.java)
+                            val intent = Intent(this@PostJobs, UpdateDeleteView::class.java)
 
                             //put extras
                             intent.putExtra("CcomId", comList[position].CcomId)
@@ -124,6 +126,7 @@ class PostJobs : AppCompatActivity() {
 
     }
     override fun onBackPressed() {
+        super.onBackPressed()
         val intent = Intent(this, CompanyDash::class.java)
         startActivity(intent)
         finish()
