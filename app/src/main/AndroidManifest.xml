@@ -18,7 +18,7 @@
 
         <activity
             android:name=".AdminInqView"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LaunchActivity"
             android:exported="true">
@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".AdminDash"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
@@ -39,7 +39,7 @@
             android:exported="true" />
         <activity
             android:name=".Interview1"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Skill1"
             android:exported="false" />
@@ -58,7 +58,7 @@
             android:exported="true" />
         <activity
             android:name=".FetchingActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ActivityInsertion"
             android:exported="true" />
@@ -72,7 +72,7 @@
             android:name=".SeekerDetails"
             android:exported="true" />
         <activity
-            android:name=".ReceiveJobApplication"
+            android:name=".RecieveJobApplication"
             android:exported="true" />
         <activity
             android:name=".UpdateDeleteView"
@@ -94,7 +94,7 @@
             android:exported="true" />
         <activity
             android:name=".JobList"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Launching"
             android:exported="true">
@@ -147,19 +147,19 @@
         <activity
             android:name=".InquiryMainActivity"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".JobViewActivity"
             android:exported="true">

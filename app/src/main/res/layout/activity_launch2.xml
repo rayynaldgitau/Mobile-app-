@@ -20,19 +20,8 @@
         tools:ignore="UselessParent">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/more"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="@dimen/layout_width1"
-            android:layout_height="@dimen/layout_height"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/dot_icon" />
+
 
         <Button
             android:id="@+id/btnGetstart"

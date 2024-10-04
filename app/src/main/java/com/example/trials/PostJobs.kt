@@ -85,7 +85,9 @@ class PostJobs : AppCompatActivity() {
                 if (snapshot.exists()){
                     for (comSnap in snapshot.children){
                         val comData = comSnap.getValue(CompanyData::class.java)
-                        comList.add(comData!!)
+                        if (comData != null) {
+                            comList.add(comData)
+                        }
 
                     }
 
