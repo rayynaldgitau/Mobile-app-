@@ -13,6 +13,10 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
+    // Hardcoded admin credentials
+    private val adminEmail = "admin@example.com"
+    private val adminPassword = "adminPassword123"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
@@ -46,7 +50,17 @@ class SignInActivity : AppCompatActivity() {
                     when (userType) {
                         "Company" -> signInUser(email, pass, CompanyDash::class.java)
                         "Seeker" -> signInUser(email, pass, InquiryMainActivity::class.java)
-                        "Admin" -> signInUser(email, pass, AdminDash::class.java)
+                        "Admin" -> {
+                            // Check if the hardcoded admin credentials match
+                            if (email == adminEmail && pass == adminPassword) {
+                                // Hardcoded credentials matched, go to AdminDash
+                                val intent = Intent(this, AdminDash::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                Toast.makeText(this, "Invalid admin credentials", Toast.LENGTH_LONG).show()
+                            }
+                        }
                         else -> Toast.makeText(this, "Invalid user type selected", Toast.LENGTH_LONG).show()
                     }
                 }
@@ -71,3 +85,4 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 }
+

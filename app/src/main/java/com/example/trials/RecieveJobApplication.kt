@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import Job // Ensure this import is correct
+import Job
 import android.util.Log
 import android.widget.Toast
 
@@ -53,10 +53,10 @@ class RecieveJobApplication : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 SekList.clear()
                 if (snapshot.exists()) {
-                    for (SekSnap in snapshot.children) {
-                        val SekData = SekSnap.getValue(Job::class.java)
-                        if (SekData != null) {
-                            SekList.add(SekData)
+                    for (sekSnap in snapshot.children) {
+                        val sekData = sekSnap.getValue(Job::class.java)
+                        if (sekData != null) {
+                            SekList.add(sekData)
                         }
                     }
                     val mAdapter = SeekerAdapter(SekList)
