@@ -65,7 +65,7 @@ class CompanyDash : AppCompatActivity() {
         viewJobs.setOnClickListener {
             val intent = Intent(this@CompanyDash,PostJobs::class.java)
             startActivity(intent)
-            finish()
+
         }
 
         val notifi = findViewById<Button>(R.id.notifi)

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class JobsAdapter (private val comList:ArrayList<CompanyData>):
+class JobsAdapter(private val comList: ArrayList<company>):
     RecyclerView.Adapter<JobsAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener

@@ -32,8 +32,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476">
 
 
         <LinearLayout
@@ -98,7 +100,7 @@
             android:weightSum="2">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.6">
 
@@ -109,7 +111,8 @@
                     android:gravity="center"
                     android:text="Company Name:"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    />
 
             </LinearLayout>
 
@@ -397,10 +400,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="32dp"
+            android:background="@drawable/background_box"
             android:backgroundTint="@color/light_green"
             android:text="Update"
             android:textColor="@color/black"
-            android:background="@drawable/background_box"
             android:textSize="18sp" />
 
         <Button
@@ -410,10 +413,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="32dp"
+            android:background="@drawable/background_box"
             android:backgroundTint="@color/light_red"
             android:text="Delete"
             android:textColor="@color/black"
-            android:background="@drawable/background_box"
             android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

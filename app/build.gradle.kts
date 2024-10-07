@@ -92,4 +92,7 @@ dependencies {
     androidTestImplementation (libs.androidx.espresso.remote)
 
     implementation (libs.material.v180)
+
+    // Coroutines for Kotlin
+    implementation (libs.kotlinx.coroutines.android)
 }
