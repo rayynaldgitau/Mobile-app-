@@ -400,7 +400,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="32dp"
-            android:background="@drawable/background_box"
+
             android:backgroundTint="@color/light_green"
             android:text="Update"
             android:textColor="@color/black"
@@ -413,7 +413,6 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="32dp"
-            android:background="@drawable/background_box"
             android:backgroundTint="@color/light_red"
             android:text="Delete"
             android:textColor="@color/black"

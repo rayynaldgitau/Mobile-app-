@@ -1,9 +1,13 @@
 package com.example.trials
 
+
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +24,9 @@ class PostJobs : AppCompatActivity() {
 
     private lateinit var jobRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
+    private lateinit var searchBar: EditText
     private val comList = ArrayList<company>()
+    private val filteredList = ArrayList<company>() // Filtered list for search results
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +34,22 @@ class PostJobs : AppCompatActivity() {
 
         jobRecyclerView = findViewById(R.id.rvJob)
         tvLoadingData = findViewById(R.id.tvLoadingData)
+        searchBar = findViewById(R.id.search) // Reference to the search bar
 
         jobRecyclerView.layoutManager = LinearLayoutManager(this)
-        fetchJobData()
+
+        // Add TextWatcher to search bar for real-time filtering
+        searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterJobsByTitle(s.toString()) // Filter jobs as the user types
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        fetchJobData() // Fetch jobs from Firebase
     }
 
     // Fetch job data using coroutines
@@ -60,7 +79,7 @@ class PostJobs : AppCompatActivity() {
 
                 // Update the RecyclerView on the main thread
                 withContext(Dispatchers.Main) {
-                    updateRecyclerView()
+                    updateRecyclerView(comList) // Initial update with full list
                 }
 
             } catch (e: Exception) {
@@ -76,24 +95,50 @@ class PostJobs : AppCompatActivity() {
     }
 
     // Separate method to update the RecyclerView
-    private fun updateRecyclerView() {
-        val mAdapter = JobsAdapter(comList)
+    private fun updateRecyclerView(list: List<company>) {
+        val mAdapter = JobsAdapter(list)
         jobRecyclerView.adapter = mAdapter
 
         mAdapter.setOnItemClickListener(object : JobsAdapter.onItemClickListener {
             override fun onItemClick(position: Int) {
                 val intent = Intent(this@PostJobs, UpdateDeleteView::class.java).apply {
-
-                    putExtra("CcompanyName", comList[position].CcompanyName)
-                    putExtra("Ctype", comList[position].Ctype)
-                    putExtra("Ccategory", comList[position].Ccategory)
-                    putExtra("Csalary", comList[position].Csalary)
-                    putExtra("Ctitle", comList[position].Ctitle)
-                    putExtra("Cdescription", comList[position].Cdescription)
+                    putExtra("CcompanyName", list[position].CcompanyName)
+                    putExtra("Ctype", list[position].Ctype)
+                    putExtra("Ccategory", list[position].Ccategory)
+                    putExtra("Csalary", list[position].Csalary)
+                    putExtra("Ctitle", list[position].Ctitle)
+                    putExtra("Cdescription", list[position].Cdescription)
+                }
+                startActivity(intent)
+            }
+            override fun onMoreInfoClick(position: Int) {
+                val intent = Intent(this@PostJobs, JobDetailActivity::class.java).apply {
+                    putExtra("CcompanyName", list[position].CcompanyName)
+                    putExtra("Ctype", list[position].Ctype)
+                    putExtra("Ccategory", list[position].Ccategory)
+                    putExtra("Csalary", list[position].Csalary)
+                    putExtra("Ctitle", list[position].Ctitle)
+                    putExtra("Cdescription", list[position].Cdescription)
                 }
                 startActivity(intent)
             }
         })
     }
+
+    // Method to filter jobs by title
+    private fun filterJobsByTitle(query: String) {
+        filteredList.clear()
+
+        // Filter by job title (Ctitle)
+        for (job in comList) {
+            if (job.Ctitle?.contains(query, ignoreCase = true) == true) {
+                filteredList.add(job)
+            }
+        }
+
+        // Update RecyclerView with filtered results
+        updateRecyclerView(filteredList)
+    }
 }
+
 

@@ -1,0 +1,49 @@
+<!-- res/layout/activity_job_detail.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".JobDetailActivity">
+
+    <TextView
+        android:id="@+id/tvJobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Job Title" />
+
+    <TextView
+        android:id="@+id/tvCompanyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Company Name" />
+
+    <TextView
+        android:id="@+id/tvJobType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job Type" />
+
+    <TextView
+        android:id="@+id/tvJobCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job Category" />
+
+    <TextView
+        android:id="@+id/tvJobSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salary" />
+
+    <TextView
+        android:id="@+id/tvJobDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job Description" />
+
+</LinearLayout>
