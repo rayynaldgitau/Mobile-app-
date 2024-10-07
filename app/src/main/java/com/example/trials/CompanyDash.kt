@@ -43,7 +43,7 @@ class CompanyDash : AppCompatActivity() {
             ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val rjobCount = snapshot.childrenCount.toInt()
-                rvJobCount.text = "Job Application: $rjobCount"
+                rvJobCount.text = "Recieved Job Applications: $rjobCount"
             }
 
 

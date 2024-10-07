@@ -36,7 +36,7 @@
             android:id="@+id/emailEt"
 
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:background="@drawable/background_box"
 
             android:hint="Type your Email"
@@ -64,7 +64,7 @@
             android:id="@+id/passET"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:background="@drawable/background_box"
             android:hint="Type Your Password"
             android:inputType="textPassword" />

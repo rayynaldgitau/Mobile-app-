@@ -1,6 +1,8 @@
 package com.example.trials
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class JobList: AppCompatActivity() {
+class JobList : AppCompatActivity() {
 
     private var dbref = FirebaseDatabase.getInstance().getReference("Jobs")
     private lateinit var jobRecyclerView: RecyclerView
@@ -23,6 +25,13 @@ class JobList: AppCompatActivity() {
         jobRecyclerView.layoutManager = LinearLayoutManager(this)
         jobRecyclerView.setHasFixedSize(true)
         jobArrayList = arrayListOf<company>()
+
+        // Set up the apply button
+        val applyButton = findViewById<Button>(R.id.applybtn)
+        applyButton.setOnClickListener {
+            goToApplyJobActivity()
+        }
+
         getJobData()
     }
 
@@ -44,4 +53,10 @@ class JobList: AppCompatActivity() {
             }
         })
     }
+
+    private fun goToApplyJobActivity() {
+        val intent = Intent(this, ApplyJobActivity::class.java)
+        startActivity(intent)
+    }
 }
+
