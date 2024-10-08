@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E4E2"
+    android:background="@drawable/bg_view"
     tools:context=".JobCategory">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,20 +71,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
-        android:background="#E5E4E2"
+        android:background="@drawable/bg_view"
 
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="32dp"
             android:layout_weight="1"
-            android:background="@color/material_dynamic_neutral90"
+
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -94,8 +95,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -118,7 +119,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="IT"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView3"
@@ -131,8 +132,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -155,7 +156,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="construction"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView4"
@@ -168,7 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_dynamic_neutral90"
+
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -176,8 +177,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -200,7 +201,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="School leavers"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView5"
@@ -213,8 +214,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView6"
@@ -237,7 +238,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="Hotel/Resturant"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView6"
@@ -250,7 +251,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_dynamic_neutral90"
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -258,8 +258,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView7"
@@ -283,7 +283,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="Financial"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView7"
@@ -296,8 +296,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:elevation="10dp">
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -320,7 +320,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="other"
-                    android:textColor="@color/purple"
+                    android:textColor="@color/blue"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/imageView8"
@@ -333,6 +333,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"

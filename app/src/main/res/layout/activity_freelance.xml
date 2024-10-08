@@ -50,16 +50,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/more"
+            android:text="Find Out"
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="9dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/dot_icon" />
+
 
         <Button
             android:id="@+id/btnGetstart"

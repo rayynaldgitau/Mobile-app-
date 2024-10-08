@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <solid android:color="@color/white"></solid>
-    <stroke android:width="20dp" android:height="20dp" android:color="@color/cardview_light_background"/>
+    <gradient android:startColor="#c6aecf" android:endColor="#456587" android:angle="45"></gradient>
+    <stroke android:width="0dp" android:height="20dp" android:color="@color/cardview_light_background"/>
     <corners android:radius="30dp"/>
 
 </shape>

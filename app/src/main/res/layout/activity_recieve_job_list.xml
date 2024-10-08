@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:layout_margin="10dp"
-        android:background="@drawable/border"
+
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="70dp">
 
@@ -25,7 +25,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
+
             android:clickable="true"
             android:focusable="true"
             android:orientation="vertical"

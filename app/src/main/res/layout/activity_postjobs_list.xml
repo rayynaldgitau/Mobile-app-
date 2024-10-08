@@ -8,7 +8,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="4dp"
+
     app:cardElevation="8dp"
+
     app:cardUseCompatPadding="true">
 
     <!-- Use ConstraintLayout instead of RelativeLayout for more flexible positioning -->
@@ -16,13 +18,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/border">
+        >
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/border"
+
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintStart_toStartOf="parent"

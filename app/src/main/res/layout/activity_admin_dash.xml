@@ -13,13 +13,13 @@
         android:layout_height="179dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/rounded_corners"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-    />
+        />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
 
 
             <LinearLayout
-                android:layout_width="177dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/background_box"
                 android:gravity="center"
