@@ -1,6 +1,8 @@
 package com.example.trials
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,6 +18,11 @@ class JobDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_detail)
+
+        val applyButton = findViewById<Button>(R.id.applybtn)
+        applyButton.setOnClickListener {
+            goToApplyJobActivity()
+        }
 
         // Initialize views
         tvJobTitle = findViewById(R.id.tvJobTitle)
@@ -40,5 +47,9 @@ class JobDetailActivity : AppCompatActivity() {
         tvJobCategory.text = jobCategory
         tvJobSalary.text = jobSalary
         tvJobDescription.text = jobDescription
+    }
+    private fun goToApplyJobActivity() {
+        val intent = Intent(this, ApplyJobActivity::class.java)
+        startActivity(intent)
     }
 }

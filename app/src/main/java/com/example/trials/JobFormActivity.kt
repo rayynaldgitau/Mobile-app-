@@ -43,7 +43,7 @@ class JobFormActivity : AppCompatActivity() {
             startActivityForResult(intent, 1)
         }
 
-        // Get the job data from the intent(company adapter eken data gannawa )
+        // Get the job data from the intent
         val companyName = intent.getStringExtra("Ccompany_name")
         val location = intent.getStringExtra("Ccategory")
         val description = intent.getStringExtra("Ctitle")
@@ -52,7 +52,7 @@ class JobFormActivity : AppCompatActivity() {
            val requirements = intent.getStringExtra("description")*/
 
 
-        // Update the UI with the job details(company adapter eken pass karana data xml eke view karanwa)
+        // Update the UI with the job details
 // Update the UI with the job details
         val companyTextView = binding.jobname
         val locationTextView = binding.jobCmpny

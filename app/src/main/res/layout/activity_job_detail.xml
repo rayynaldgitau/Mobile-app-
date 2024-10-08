@@ -76,17 +76,19 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:paddingBottom="16dp" />
 
-        <!-- More Info Button (Optional) -->
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btnMoreInfo"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="More Info"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--            app:cornerRadius="8dp"-->
-<!--            android:paddingTop="8dp"-->
-<!--            android:paddingBottom="8dp" />-->
+<!--         More Info Button (Optional) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/applybtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply Now "
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_box"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
 
     </LinearLayout>
 

@@ -63,7 +63,7 @@ class JobCategory: AppCompatActivity() {
 
         val home = findViewById<ImageButton>(R.id.vhome)
         home.setOnClickListener {
-            val intent = Intent(this,InquiryMainActivity::class.java)
+            val intent = Intent(this,AllJobs::class.java)
             startActivity(intent)
         }
 

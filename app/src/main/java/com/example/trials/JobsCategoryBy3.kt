@@ -2,6 +2,7 @@ package com.example.trials
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,67 +13,73 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class JobsCategoryBy3 : AppCompatActivity() {
-    private var dbref = FirebaseDatabase.getInstance().getReference("Jobs")
+
+    private val dbref = FirebaseDatabase.getInstance().getReference("Jobs")
     private lateinit var jobRecyclerView: RecyclerView
-    private lateinit var jobArrayList: ArrayList<company>
+    private lateinit var jobList: ArrayList<company>
+    private lateinit var companyAdapter: CompanyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jobs_categoryby3)
 
-        jobRecyclerView = findViewById(R.id.rvJob)
-        jobRecyclerView.layoutManager = LinearLayoutManager(this)
-        jobRecyclerView.setHasFixedSize(true)
-
-        jobArrayList = arrayListOf<company>()
-        val companyAdapter = CompanyAdapter(jobArrayList)
-        jobRecyclerView.adapter = companyAdapter
+        setupRecyclerView()
+        setupNavbar()
 
         getJobData()
     }
 
-    private fun getJobData(){
-        dbref.orderByChild("ccategory").equalTo("Financial").addValueEventListener(object :
-            ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
+    private fun setupRecyclerView() {
+        jobRecyclerView = findViewById(R.id.rvJob)
+        jobRecyclerView.layoutManager = LinearLayoutManager(this)
+        jobRecyclerView.setHasFixedSize(true)
 
-                if (snapshot.exists()){
-                    for (jobSnapshot in snapshot.children){
-                        val job = jobSnapshot.getValue(company::class.java)
+        jobList = arrayListOf()
+        companyAdapter = CompanyAdapter(jobList)
+        jobRecyclerView.adapter = companyAdapter
+    }
 
-                        jobArrayList.add(job!!)
-
+    private fun getJobData() {
+        dbref.orderByChild("ccategory")
+            .equalTo("Financial")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        Log.d("JobsData", "Data exists: ${snapshot.childrenCount}")
+                        for (jobSnapshot in snapshot.children) {
+                            val job = jobSnapshot.getValue(company::class.java)
+                            job?.let {
+                                Log.d("JobsData", "Job: ${it.Ctitle}")
+                                jobList.add(it)
+                                companyAdapter.notifyItemInserted(jobList.size - 1)
+                            }
+                        }
                     }
-                    jobRecyclerView.adapter?.notifyDataSetChanged()
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Do nothing for now
-            }
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle error
+                }
+            })
+    }
 
-        })
-
-        //navbar
+    private fun setupNavbar() {
         val imageButton = findViewById<ImageButton>(R.id.vProfile)
-
         imageButton.setOnClickListener {
-            val intent = Intent(this,SeekerProfile::class.java)
+            val intent = Intent(this, SeekerProfile::class.java)
             startActivity(intent)
         }
 
-        val home = findViewById<ImageButton>(R.id.vhome)
-        home.setOnClickListener {
-            val intent = Intent(this,ActivityInsertion::class.java)
+        val homeButton = findViewById<ImageButton>(R.id.vhome)
+        homeButton.setOnClickListener {
+            val intent = Intent(this, ActivityInsertion::class.java)
             startActivity(intent)
         }
 
-        val inq = findViewById<ImageButton>(R.id.vInqury)
-        inq.setOnClickListener {
+        val inquiryButton = findViewById<ImageButton>(R.id.vInqury)
+        inquiryButton.setOnClickListener {
             val intent = Intent(this, InquiryMainActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }

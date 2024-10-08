@@ -74,8 +74,8 @@
                         android:layout_height="21dp"
                         android:layout_marginStart="76dp"
                         android:layout_marginEnd="16sp"
-                        android:text="Job Name:"
-                        android:textSize="18sp"
+                        android:text="Seeker's Name:"
+
                         android:textStyle="bold"/>
                     <TextView
                         android:id="@+id/seekerjob"
@@ -85,7 +85,7 @@
 
                         android:layout_marginEnd="46sp"
                         android:gravity="center_horizontal"
-                        android:text="Job Name"
+                        android:text="seekers Name"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

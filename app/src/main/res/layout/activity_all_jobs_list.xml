@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvJobs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="4dp"
+
+    app:cardElevation="8dp"
+
+    app:cardUseCompatPadding="true">
+
+    <!-- Use ConstraintLayout instead of RelativeLayout for more flexible positioning -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/photo"
+            android:padding="8dp">
+
+            <!-- Job Title -->
+            <TextView
+                android:id="@+id/job1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/job1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="3dp" />
+
+            <!-- Company Info with Icon -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <ImageView
+                    android:id="@+id/iconCompany1"
+                    android:layout_width="15dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/officebuilding" />
+
+                <TextView
+                    android:id="@+id/companyname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="ABC company"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Job Type Info with Icon -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iconLocation"
+                    android:layout_width="15dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Full time"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- More Info Button and Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <Button
+                    android:id="@+id/more"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/green"
+                    android:text="More info"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="2023.12.05 /22.10"
+                    android:textSize="10sp"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Image Preview on the right -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/photo"
+            android:layout_width="42dp"
+            android:layout_height="58dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/jobs" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

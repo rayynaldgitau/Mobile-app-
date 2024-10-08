@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#F9F9F9"
     android:backgroundTint="#56FFFFFF"
     android:backgroundTintMode="add"
     android:elevation="8dp"
-    android:background="@drawable/border"
     android:textAlignment="center"
     tools:context=".SeekerProfile">
 
@@ -21,37 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="384dp"
-            android:layout_height="52dp"
-            android:background="@drawable/background_box"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/Job_seeker_desc"
-            tools:layout_editor_absoluteX="29dp"
-            tools:layout_editor_absoluteY="238dp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Job_seeker_name"
-            android:textColor="#000000"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="142dp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/Job_seeker_about"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="169dp"
-            tools:layout_editor_absoluteY="206dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
@@ -64,19 +34,62 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
-    <!--    <TextView-->
-<!--        android:id="@+id/textView8"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:text="@string/job_seeker_location"-->
-<!--        android:textColor="#ECE8E8"-->
-<!--        android:textSize="16sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView6" />-->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Job_seeker_name"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
-    <!--        app:layout_constraintTop_toBottomOf="@+id/textView8" />-->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/job_seeker_location"
+        android:textColor="#ECE8E8"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Job_seeker_about"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="384dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_box"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/Job_seeker_desc"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <ImageButton
         android:id="@+id/rcntbtn"
@@ -93,9 +106,10 @@
         android:id="@+id/imageButton4"
         android:layout_width="367dp"
         android:layout_height="124dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/background_box"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rcntbtn"
         app:srcCompat="@drawable/notifybtn" />
@@ -105,7 +119,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/background_box"
         android:backgroundTint="#B5FEAF"
@@ -115,6 +129,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
 
@@ -123,7 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/background_box"
         android:backgroundTint="#FFB2B2"
@@ -133,6 +148,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -150,9 +166,8 @@
         <ImageButton
             android:id="@+id/imageView10"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
             app:srcCompat="@drawable/home" />
 
         <ImageButton
@@ -160,7 +175,6 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@null"
             app:srcCompat="@drawable/category" />
 
         <ImageButton
@@ -168,7 +182,6 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@null"
             app:srcCompat="@drawable/inquiry" />
 
         <ImageButton
@@ -176,7 +189,6 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@null"
             app:srcCompat="@drawable/profilenav" />
     </LinearLayout>
 

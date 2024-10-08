@@ -68,6 +68,25 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty fields are not allowed!!!", Toast.LENGTH_LONG).show()
             }
         }
+
+        // Handle the forgot password process
+        binding.forgotPasswordTv.setOnClickListener {
+            val email = binding.emailEt.text.toString()
+
+            if (email.isNotEmpty()) {
+                // Send password reset email
+                firebaseAuth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Password reset email sent", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(this, task.exception?.localizedMessage ?: "Error sending password reset email", Toast.LENGTH_LONG).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(this, "Please enter your email to reset the password", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     // Reusable function to handle sign-in and navigation
@@ -85,4 +104,5 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 }
+
 

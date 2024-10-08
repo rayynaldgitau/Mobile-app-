@@ -42,7 +42,8 @@ class SignUpActivity : AppCompatActivity() {
 
         // Set a click listener for the sign-up button
         binding.button.setOnClickListener {
-            // Retrieve user input (email, password, etc.)
+            // Retrieve user input (username, email, password, etc.)
+            val username = binding.usernameEt.text.toString()  // New username field
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
@@ -59,7 +60,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             // Validate input fields
-            if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
+            if (username.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
                     // Create user account using Firebase Authentication
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
@@ -72,6 +73,7 @@ class SignUpActivity : AppCompatActivity() {
                             // Store user data in the database
                             val userId = firebaseAuth.currentUser?.uid ?: ""
                             val userMap = hashMapOf<String, Any>(
+                                "username" to username,  // Store username
                                 "email" to email,
                                 "userType" to userType
                             )
@@ -94,3 +96,4 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 }
+

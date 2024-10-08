@@ -69,7 +69,7 @@ class InquiryMainActivity : AppCompatActivity() {
 
         Jobview.setOnClickListener{
 
-            val intent = Intent(this, JobCategory::class.java)
+            val intent = Intent(this, AllJobs::class.java)
             startActivity(intent)
 
         }
