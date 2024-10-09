@@ -1,13 +1,11 @@
 package com.example.trials
 
-
 import Job
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-
+import androidx.appcompat.app.AppCompatActivity
 import com.example.trials.databinding.ActivityJobFormBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -31,11 +29,6 @@ class JobFormActivity : AppCompatActivity() {
         databaseRef = FirebaseDatabase.getInstance().reference
         storageRef = FirebaseStorage.getInstance().reference
 
-        //   binding.submitbtn.setOnClickListener {
-        //val intent = Intent(this,ActivityJobViewBinding::class.java)
-        //  startActivity(intent)
-        // }
-
         binding.choosefile.setOnClickListener {
             // Create an intent to open the file chooser
             val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -48,27 +41,18 @@ class JobFormActivity : AppCompatActivity() {
         val location = intent.getStringExtra("Ccategory")
         val description = intent.getStringExtra("Ctitle")
         val type = intent.getStringExtra("Csalary")
-        /*   val time = intent.getStringExtra("title")
-           val requirements = intent.getStringExtra("description")*/
-
 
         // Update the UI with the job details
-// Update the UI with the job details
         val companyTextView = binding.jobname
         val locationTextView = binding.jobCmpny
         val descriptionTextView = binding.timejob
 
-        companyName?.let { companyTextView.text = it } ?: run { companyTextView.text = "Company Name Not Available" }
-        location?.let { locationTextView.text = it } ?: run { locationTextView.text = "Location Not Available" }
-        description?.let { descriptionTextView.text = it } ?: run { descriptionTextView.text = "Description Not Available" }
-
-        //typeTextView.text=type
-
-
-
+        companyTextView.text = companyName ?: "Company Name Not Available"
+        locationTextView.text = location ?: "Location Not Available"
+        descriptionTextView.text = description ?: "Description Not Available"
 
         binding.submitbtn.setOnClickListener {
-            val jobName= binding.jobName.text.toString()
+            val jobName = binding.jobName.text.toString()
             val fullName = binding.fllnme.text.toString()
             val email = binding.emailtxt.text.toString()
             val gender = binding.checkBox1.isChecked
@@ -92,9 +76,8 @@ class JobFormActivity : AppCompatActivity() {
                                 address,
                                 mobile,
                                 jobName,
-                                downloadUri.toString(),
-
-                                )
+                                downloadUri.toString()
+                            )
 
                             val jobFormRef = databaseRef.child("jobForms").push()
                             jobFormRef.setValue(jobs).addOnSuccessListener {
@@ -106,15 +89,7 @@ class JobFormActivity : AppCompatActivity() {
                                 ).show()
 
                                 // Clear the form fields
-                                binding.fllnme.setText("")
-                                binding.emailtxt.setText("")
-                                binding.checkBox1.isChecked = false
-                                binding.checkBox2.isChecked = false
-                                binding.addresstxt.setText("")
-                                binding.mbiletxt.setText("")
-                                binding.jobName.setText("")
-                                fileUri = null
-
+                                clearFormFields()
                             }.addOnFailureListener {
                                 // Show failure message
                                 Toast.makeText(this, "Data insertion failed", Toast.LENGTH_SHORT)
@@ -126,31 +101,37 @@ class JobFormActivity : AppCompatActivity() {
                         Toast.makeText(this, "File upload failed", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    // If no CV file has been chosen, create a com.example.trials.com.example.trials.Job object without the download URL
-                    val Jobs = Job(fullName,email,gender, gender2, address, mobile, jobName)
+                    // If no CV file has been chosen, create a Job object without the download URL
+                    val jobs = Job(fullName, email, gender, gender2, address, mobile, jobName)
 
                     val jobFormRef = databaseRef.child("jobForms").push()
-                    jobFormRef.setValue(Jobs).addOnSuccessListener {
+                    jobFormRef.setValue(jobs).addOnSuccessListener {
                         // Show success message
-                        Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_SHORT)
-                            .show()
-                        // Clear the form fields
-                        binding.fllnme.setText("")
-                        binding.emailtxt.setText("")
-                        binding.checkBox1.isChecked = false
-                        binding.checkBox2.isChecked = false
-                        binding.addresstxt.setText("")
-                        binding.mbiletxt.setText("")
-                        binding.jobName.setText("")
-                        fileUri = null
-
-                        val intent = Intent(this,CardView::class.java)
-                        // Start the new activity
-                        startActivity(intent)
-
+                        Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_SHORT).show()
+                        clearFormFields()
                     }
                 }
             }
+        }
+    }
+
+    private fun clearFormFields() {
+        binding.fllnme.setText("")
+        binding.emailtxt.setText("")
+        binding.checkBox1.isChecked = false
+        binding.checkBox2.isChecked = false
+        binding.addresstxt.setText("")
+        binding.mbiletxt.setText("")
+        binding.jobName.setText("")
+        fileUri = null
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            fileUri = data.data // Get the Uri of the selected file
+            // Optionally, you can display the selected file's name or URI in your UI
+            Toast.makeText(this, "File selected: $fileUri", Toast.LENGTH_SHORT).show()
         }
     }
 }

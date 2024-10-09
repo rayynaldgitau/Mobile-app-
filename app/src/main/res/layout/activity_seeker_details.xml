@@ -74,7 +74,7 @@
                         android:layout_height="21dp"
                         android:layout_marginStart="76dp"
                         android:layout_marginEnd="16sp"
-                        android:text="Seeker's Name:"
+                        android:text="Company Name:"
 
                         android:textStyle="bold"/>
                     <TextView
@@ -116,102 +116,136 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="14dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#f1f1f1"
-                    app:strokeWidth="0.5dp">
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
+                    <TextView
+                        android:layout_width="181dp"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="76dp"
+                        android:layout_marginEnd="16sp"
+                        android:textSize="18sp"
+                        android:text="Email:"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="16sp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="21dp"
-                                android:layout_height="21dp"
-                                android:src="@drawable/goverment" />
+                        android:layout_marginStart="-160dp"
+                        android:layout_marginEnd="46sp"
+                        android:gravity="center_horizontal"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="5dp"
-                                android:text="Education Qulification" />
-                        </LinearLayout>
+                <!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="14dp"-->
+<!--                    android:layout_marginTop="14dp"-->
+<!--                    android:layout_marginEnd="14dp"-->
+<!--                    app:cardCornerRadius="10dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:strokeColor="#f1f1f1"-->
+<!--                    app:strokeWidth="0.5dp">-->
 
-                        <TextView
-                            android:id="@+id/Edescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textIsSelectable="true"
-                            android:text="Collaborate in the design process with a UI/UX engineer to produce specifications for implementation of user interfaces  · Help establish and manage a build pipeline for the application interfaces providing Kurense’s products and services" />
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="16sp"-->
+<!--                        android:orientation="vertical">-->
 
-                    </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginBottom="16dp"-->
+<!--                            android:orientation="horizontal">-->
 
-                </com.google.android.material.card.MaterialCardView>
+<!--                            <ImageView-->
+<!--                                android:layout_width="21dp"-->
+<!--                                android:layout_height="21dp"-->
+<!--                                android:src="@drawable/goverment" />-->
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center_vertical"-->
+<!--                                android:layout_marginStart="5dp"-->
+<!--                                android:text="Education Qulification" />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/Edescription"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textIsSelectable="true"-->
+<!--                            android:text="Collaborate in the design process with a UI/UX engineer to produce specifications for implementation of user interfaces  · Help establish and manage a build pipeline for the application interfaces providing Kurense’s products and services" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="14dp"-->
+<!--                    android:layout_marginTop="14dp"-->
+<!--                    android:layout_marginEnd="14dp"-->
+<!--                    app:cardCornerRadius="10dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:strokeColor="#f1f1f1"-->
+<!--                    app:strokeWidth="0.5dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="16sp"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginBottom="16dp"-->
+<!--                            android:orientation="horizontal">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="21dp"-->
+<!--                                android:layout_height="21dp"-->
+<!--                                android:src="@drawable/goverment" />-->
+
+
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center_vertical"-->
+<!--                                android:layout_marginStart="5dp"-->
+<!--                                android:text="Other Qulification" />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/Odescription"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+
+<!--                            android:textIsSelectable="true"-->
+<!--                            android:text="Collaborate in the design process with a UI/UX engineer to produce specifications for implementation of user interfaces  · Help establish and manage a build pipeline for the application interfaces providing Kurense’s products and services" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+                <Button
+                    android:id="@+id/downloadCvButton"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="140dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="14dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#f1f1f1"
-                    app:strokeWidth="0.5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16sp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="21dp"
-                                android:layout_height="21dp"
-                                android:src="@drawable/goverment" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="5dp"
-                                android:text="Other Qulification" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/Odescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:textIsSelectable="true"
-                            android:text="Collaborate in the design process with a UI/UX engineer to produce specifications for implementation of user interfaces  · Help establish and manage a build pipeline for the application interfaces providing Kurense’s products and services" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
+                    android:text="Download CV" />
 
                 <Button
                     android:id="@+id/Acceptbutton"
