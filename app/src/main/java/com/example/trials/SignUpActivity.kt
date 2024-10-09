@@ -50,13 +50,13 @@ class SignUpActivity : AppCompatActivity() {
 
             // Validate if a radio button is selected
             val selectedOption = binding.radioGroup.checkedRadioButtonId
-            val userType: String = if (selectedOption == R.id.radioSeeker) {
-                "Seeker"
-            } else if (selectedOption == R.id.radioCompany) {
-                "Company"
-            } else {
-                Toast.makeText(this, "Please select a user type", Toast.LENGTH_LONG).show()
-                return@setOnClickListener
+            val userType: String = when (selectedOption) {
+                R.id.radioSeeker -> "Seeker"
+                R.id.radioCompany -> "Company"
+                else -> {
+                    Toast.makeText(this, "Please select a user type", Toast.LENGTH_LONG).show()
+                    return@setOnClickListener
+                }
             }
 
             // Validate input fields
@@ -94,6 +94,19 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_LONG).show()
             }
         }
+
+        // Set click listener for the sign-in text
+        binding.textView.setOnClickListener {
+            redirectToSignInPage()  // Call the function to navigate to Sign In page
+        }
+    }
+
+    // Function to navigate to the SignInActivity
+    private fun redirectToSignInPage() {
+        val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+        startActivity(intent)
+        finish()  // Optionally finish the current activity
     }
 }
+
 
