@@ -2,6 +2,7 @@ package com.example.trials
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class SeekerProfile: AppCompatActivity() {
+class SeekerProfile : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
 
@@ -35,6 +36,7 @@ class SeekerProfile: AppCompatActivity() {
         }
 
         setupNavigationButtons()
+        setupSignOutButton() // Initialize sign out button
     }
 
     private fun setupNavigationButtons() {
@@ -46,13 +48,13 @@ class SeekerProfile: AppCompatActivity() {
 
         val category = findViewById<ImageButton>(R.id.catogry)
         category.setOnClickListener {
-            val intent = Intent(this, JobViewActivity::class.java)
+            val intent = Intent(this, AllJobs::class.java)
             startActivity(intent)
         }
 
         val home = findViewById<ImageButton>(R.id.imageView10)
         home.setOnClickListener {
-            val intent = Intent(this, InquiryMainActivity::class.java)
+            val intent = Intent(this, JobCategory::class.java)
             startActivity(intent)
         }
 
@@ -61,6 +63,24 @@ class SeekerProfile: AppCompatActivity() {
             val intent = Intent(this, InquiryDetailsActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun setupSignOutButton() {
+        val signOutButton = findViewById<Button>(R.id.signOutButton)
+        signOutButton.setOnClickListener {
+            signOut() // Call sign out function
+        }
+    }
+
+    private fun signOut() {
+        // Sign out the user from Firebase Auth
+        FirebaseAuth.getInstance().signOut()
+
+        // Navigate back to the login screen (assuming it's called LoginActivity)
+        val intent = Intent(this, SignInActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Clear the back stack
+        startActivity(intent)
+        finish() // Close the current activity
     }
 
     private fun getUserName(userId: String) {

@@ -65,20 +65,27 @@ class JobsCategoryBy3 : AppCompatActivity() {
 
     private fun setupNavbar() {
         val imageButton = findViewById<ImageButton>(R.id.vProfile)
+
         imageButton.setOnClickListener {
-            val intent = Intent(this, SeekerProfile::class.java)
+            val intent = Intent(this,SeekerProfile::class.java)
             startActivity(intent)
         }
 
-        val homeButton = findViewById<ImageButton>(R.id.vhome)
-        homeButton.setOnClickListener {
-            val intent = Intent(this, ActivityInsertion::class.java)
+        val home = findViewById<ImageButton>(R.id.vhome)
+        home.setOnClickListener {
+            val intent = Intent(this,JobCategory::class.java)
             startActivity(intent)
         }
 
-        val inquiryButton = findViewById<ImageButton>(R.id.vInqury)
-        inquiryButton.setOnClickListener {
-            val intent = Intent(this, InquiryMainActivity::class.java)
+        val inq = findViewById<ImageButton>(R.id.vInqury)
+        inq.setOnClickListener {
+            val intent = Intent(this,ActivityInsertion::class.java)
+            startActivity(intent)
+        }
+
+        val category = findViewById<ImageButton>(R.id.vCategory)
+        category.setOnClickListener {
+            val intent = Intent(this,AllJobs::class.java)
             startActivity(intent)
         }
     }

@@ -56,12 +56,12 @@ class AllJobs : AppCompatActivity(){
 
         val home = findViewById<ImageButton>(R.id.vhome)
         home.setOnClickListener {
-            val intent = Intent(this,AllJobs::class.java)
+            val intent = Intent(this,JobCategory::class.java)
             startActivity(intent)
         }
         val category = findViewById<ImageButton>(R.id.vCategory)
         category.setOnClickListener {
-            val intent = Intent(this,JobCategory::class.java)
+            val intent = Intent(this,AllJobs::class.java)
             startActivity(intent)
         }
         val inq = findViewById<ImageButton>(R.id.vInqury)

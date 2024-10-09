@@ -47,49 +47,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/job_seeker_location"
-        android:textColor="#ECE8E8"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView8"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="@string/job_seeker_location"-->
+<!--        android:textColor="#ECE8E8"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView6" />-->
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/Job_seeker_about"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView11"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:text="@string/Job_seeker_about"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="16sp"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView8" />-->
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="384dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/background_box"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/Job_seeker_desc"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView12"-->
+<!--        android:layout_width="384dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:background="@drawable/background_box"-->
+<!--        android:gravity="center_horizontal|center_vertical"-->
+<!--        android:text="@string/Job_seeker_desc"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView11" />-->
 
     <ImageButton
         android:id="@+id/rcntbtn"
@@ -134,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/signOutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -160,7 +160,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/signOutButton"
         app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
